@@ -104,7 +104,7 @@ router.get('/', (req, res, next) => {
 });
 
 // Get a specific product by ID
-router.get('/:productId',checkAuth, async (req, res, next) => {
+router.get('/:productId', async (req, res, next) => {
     try {
         const productId = req.params.productId;
         const product = await Product.findById(productId).select('name price');
