@@ -8,7 +8,7 @@ const userRoutes = require('./api/routes/user');
 const dotenv = require("dotenv");
 const bodyParser = require('body-parser');
 dotenv.config();
-connectDB();
+connectDB().then(r => console.log('connect db '));
 
 app.use(morgan('dev'));
 app.use(bodyParser.urlencoded({extended: false}));
