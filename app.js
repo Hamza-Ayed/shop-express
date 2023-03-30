@@ -30,6 +30,10 @@ app.use('/products', productRoutes);
 app.use('/orders', orderRoutes);
 app.use('/user', userRoutes);
 
+app.get('/',(req, res)=>{
+    res.json({message:"Hello from my Shop API"})
+});
+
 app.use((req, res, next) => {
     const error = new Error('Not Found');
     error.status = 404;
